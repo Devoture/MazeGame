@@ -55,7 +55,6 @@ public class CharacterController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  GetComponent<WallSpawning>().spawnwall();
         if (Input.GetKeyDown(upKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
