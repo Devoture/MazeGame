@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrailScript : MonoBehaviour {
+public class SpawnWall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

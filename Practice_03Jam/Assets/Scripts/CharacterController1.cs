@@ -28,7 +28,7 @@ public class CharacterController1 : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
         spawnwall();
 
-        // transform.TransformDirection(-Vector3.forward * 2));
+       // transform.TransformDirection(-Vector3.forward * 2);
 
 
     }
