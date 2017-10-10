@@ -58,21 +58,25 @@ public class CharacterController1 : MonoBehaviour
         if (Input.GetKeyDown(upKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
+           // transform.Rotate(0, 0, 0);
             spawnwall();
         }
         else if (Input.GetKeyDown(downKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.forward * speed;
+           // transform.Rotate(0, 90, 0);
             spawnwall();
         }
         else if (Input.GetKeyDown(rightKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.right * speed;
+          //  transform.Rotate(0, 0, 0);
             spawnwall();
         }
         else if (Input.GetKeyDown(leftKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.right * speed;
+          //  transform.Rotate(0, 0, -90);
             spawnwall();
         }
 
