@@ -29,6 +29,7 @@ public class CharacterController1 : MonoBehaviour
         spawnwall();
 
        // transform.TransformDirection(-Vector3.forward * 2);
+       // wtf is this for 
 
 
     }
@@ -58,25 +59,25 @@ public class CharacterController1 : MonoBehaviour
         if (Input.GetKeyDown(upKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
-           // transform.Rotate(0, 0, 0);
+            transform.Rotate(Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(downKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.forward * speed;
-           // transform.Rotate(0, 90, 0);
+            transform.Rotate(-Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(rightKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.right * speed;
-          //  transform.Rotate(0, 0, 0);
+            transform.Rotate(Vector3.right);
             spawnwall();
         }
         else if (Input.GetKeyDown(leftKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.right * speed;
-          //  transform.Rotate(0, 0, -90);
+            transform.Rotate(-Vector3.right);
             spawnwall();
         }
 
