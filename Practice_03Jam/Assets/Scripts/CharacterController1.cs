@@ -28,8 +28,8 @@ public class CharacterController1 : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
         spawnwall();
 
-       // transform.TransformDirection(-Vector3.forward * 2);
-       // wtf is this for 
+       transform.TransformDirection(-Vector3.forward * 2);
+    
 
 
     }
@@ -53,31 +53,34 @@ public class CharacterController1 : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    /* need to fix player rotation, possible fixes, Vector3.RotateTowards, or MoveTowards  */
     void Update()
     {
         if (Input.GetKeyDown(upKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
-            transform.Rotate(Vector3.forward);
+            GetComponent<Rigidbody>().rotation =   Quaternion.identity;
             spawnwall();
         }
         else if (Input.GetKeyDown(downKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.forward * speed;
-            transform.Rotate(-Vector3.forward);
+            GetComponent<Rigidbody>().rotation = Quaternion.identity;
+            //transform.Rotate(-Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(rightKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.right * speed;
-            transform.Rotate(Vector3.right);
+            GetComponent<Rigidbody>().rotation = Quaternion.identity;
+           // transform.Rotate(Vector3.right);
             spawnwall();
         }
         else if (Input.GetKeyDown(leftKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.right * speed;
-            transform.Rotate(-Vector3.right);
+            GetComponent<Rigidbody>().rotation =  Quaternion.identity;
+            // transform.Rotate(-Vector3.right);
             spawnwall();
         }
 
