@@ -60,6 +60,7 @@ public class CharacterController1 : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
             GetComponent<Rigidbody>().rotation =   Quaternion.identity;
+         //   transform.Rotate(Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(downKey))
