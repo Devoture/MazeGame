@@ -89,5 +89,13 @@ public class CharacterController1 : MonoBehaviour
 
 
     }
+
+    void OnTriggerEnter(Collider co) {
+    // Not the current wall?
+    if (co != wall) {
+        print("Player lost:" + name);
+        Destroy(gameObject);
+    }
+}
 }
 
