@@ -44,14 +44,14 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &2105803462
+--- !u!1001 &913781560
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,8 +152,63 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114589596232221884, guid: a7178a38517bd1440a31c429a5698acc, type: 2}
-    - {fileID: 92537168587679758, guid: a7178a38517bd1440a31c429a5698acc, type: 2}
+    - target: {fileID: 20339122332151664, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_RenderingPath
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.65594506
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.65594506
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96297862513502698, guid: a7178a38517bd1440a31c429a5698acc,
+        type: 2}
+      propertyPath: m_Emitting
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7178a38517bd1440a31c429a5698acc, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2012842190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734994692271234, guid: a7178a38517bd1440a31c429a5698acc,
+    type: 2}
+  m_PrefabInternal: {fileID: 913781560}
+--- !u!114 &2012842196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012842190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 4b6481da309bfff43ac7e4cc600d8a86, type: 2}
