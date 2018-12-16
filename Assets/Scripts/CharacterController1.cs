@@ -17,7 +17,7 @@ public class CharacterController1 : MonoBehaviour
     Vector3 lastWallEnd;
     
 
-    public float speed = 16;
+    public int speed = 16;
 
     // Use this for initialization
     void Start()
@@ -59,29 +59,21 @@ public class CharacterController1 : MonoBehaviour
         if (Input.GetKeyDown(upKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
-            GetComponent<Rigidbody>().rotation =   Quaternion.identity;
-         //   transform.Rotate(Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(downKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.forward * speed;
-            GetComponent<Rigidbody>().rotation = Quaternion.identity;
-            //transform.Rotate(-Vector3.forward);
             spawnwall();
         }
         else if (Input.GetKeyDown(rightKey))
         {
             GetComponent<Rigidbody>().velocity = Vector3.right * speed;
-            GetComponent<Rigidbody>().rotation = Quaternion.identity;
-           // transform.Rotate(Vector3.right);
             spawnwall();
         }
         else if (Input.GetKeyDown(leftKey))
         {
             GetComponent<Rigidbody>().velocity = -Vector3.right * speed;
-            GetComponent<Rigidbody>().rotation =  Quaternion.identity;
-            // transform.Rotate(-Vector3.right);
             spawnwall();
         }
 
