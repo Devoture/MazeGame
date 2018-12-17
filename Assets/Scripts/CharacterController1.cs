@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController1 : MonoBehaviour
-{
-
+public class CharacterController1 : MonoBehaviour {
     public KeyCode upKey;
     public KeyCode downKey;
     public KeyCode rightKey;
@@ -15,35 +13,33 @@ public class CharacterController1 : MonoBehaviour
     Collider wall;
 
     Vector3 lastWallEnd;
-    
+    Vector3 movement;
 
+    public Rigidbody _rb;
+    public Transform target;
     public int speed = 16;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         Invoke("lastWallEnd", 5);
         Invoke("wall", 5);
 
-        GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
+        _rb =  GetComponent<Rigidbody>();
+
+        _rb.velocity = Vector3.forward * speed;
         spawnwall();
 
        transform.TransformDirection(-Vector3.forward * 2);
-    
-
-
     }
 
-    void spawnwall()
-    {
+    void spawnwall() {
         lastWallEnd = transform.position;
 
         GameObject g = (GameObject)Instantiate(wallprefab, transform.position, Quaternion.identity);
         wall = g.GetComponent<Collider>();
     }
 
-    void fitColliderBetween(Collider co, Vector3 a, Vector3 b)
-    {
+    void fitColliderBetween(Collider co, Vector3 a, Vector3 b) {
         co.transform.position = a + (b - a) * 0.5f;
         float dist = Vector3.Distance(a, b);
         if (a.x != b.x)
@@ -54,26 +50,22 @@ public class CharacterController1 : MonoBehaviour
     }
 
     /* need to fix player rotation, possible fixes, Vector3.RotateTowards, or MoveTowards  */
-    void Update()
-    {
-        if (Input.GetKeyDown(upKey))
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.forward * speed;
+    void FixedUpdate() {
+
+        if (Input.GetKeyDown(upKey)) {
+            _rb.velocity = Vector3.forward * speed;
             spawnwall();
         }
-        else if (Input.GetKeyDown(downKey))
-        {
-            GetComponent<Rigidbody>().velocity = -Vector3.forward * speed;
+        else if (Input.GetKeyDown(downKey)) {
+            _rb.velocity = -Vector3.forward * speed;
             spawnwall();
         }
-        else if (Input.GetKeyDown(rightKey))
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.right * speed;
+        else if (Input.GetKeyDown(rightKey)) {
+            _rb.velocity = Vector3.right * speed;
             spawnwall();
         }
-        else if (Input.GetKeyDown(leftKey))
-        {
-            GetComponent<Rigidbody>().velocity = -Vector3.right * speed;
+        else if (Input.GetKeyDown(leftKey)) {
+            _rb.velocity = -Vector3.right * speed;
             spawnwall();
         }
 
@@ -84,10 +76,10 @@ public class CharacterController1 : MonoBehaviour
 
     void OnTriggerEnter(Collider co) {
     // Not the current wall?
-    if (co != wall) {
-        print("Player lost:" + name);
-        Destroy(gameObject);
+        if (co != wall) {
+            print("Player lost:" + name);
+            Destroy(gameObject);
+        }
     }
-}
 }
 
